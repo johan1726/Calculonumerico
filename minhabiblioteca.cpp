@@ -1084,23 +1084,33 @@ double Secante (double x0, double x1, int  maximo, double tol, int DBG_VIEW)
     xkp = 0;
     for(k=0;k<maximo;k++)
     {
-        xkp = (xka*funcaopadrao(xk) - xk*funcaopadrao(xka)/ ( funcaopadrao(xk) - funcaopadrao(xka) ) );
-        if(abs(funcaopadrao(xkp)) < tol)
-        {
-            return xkp;
-        }
+        xkp = (xka*funcaopadrao1(xk) - xk*funcaopadrao1(xka))/ ( funcaopadrao1(xk) - funcaopadrao1(xka) ) ;
+
         if(abs(xkp-xk) <tol)
         {
             return xkp;
         }
-        cout << "xk: /n" << xk;
-        cout << "\n\n xkp:\n" << xkp;
+
+        if(abs(funcaopadrao1(xkp)) < tol)
+        {
+            return xkp;
+        }
+
 
         xka = xk;
         xk = xkp;
+        if(DBG_VIEW == 1)
+        {
+            cout << "\n\n" << xka;
+        }
+
 
     }
-    //cout << " Nao convergiu. Secante";
+    if(k = maximo)
+    {
+        cout << " Nao convergiu. Secante";
+    }
+
 
 }
 
@@ -1144,6 +1154,8 @@ void GradienteVet( Matriz &X, int indice, Matriz &OUT, double h)
 
 
 }
+
+
 
 // Transposição de Matriz
 
