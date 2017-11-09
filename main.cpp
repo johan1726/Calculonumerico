@@ -30,13 +30,15 @@ int main()
 //     INICIE  SUA PROGRAMAÇÃO ABAIXO DESTA MENSAGEM
     // =============================================
 
+//
+//    double h;
+//
+//
+//    h = Secante(4,3,100, 0.0000001, 1);
+//
+//    cout << "\n\n" << setprecision(15) << h;
 
-    double h;
 
-
-    h = Secante(4,3,100, 0.0000001, 1);
-
-    cout << "\n\n" << setprecision(15) << h;
 
 
 
