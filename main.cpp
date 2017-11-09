@@ -30,14 +30,18 @@ int main()
 //     INICIE  SUA PROGRAMAÇÃO ABAIXO DESTA MENSAGEM
     // =============================================
 
+//
+//    double h;
+//
+//
+//    h = Secante(4,3,100, 0.0000001, 1);
+//
+//    cout << "\n\n" << setprecision(15) << h;
 
-    double h;
+double S;
+S = QuadraturaGuassiana(1, 2);
 
-
-    h = Secante(4,3,100, 0.0000001, 1);
-
-    cout << "\n\n" << setprecision(15) << h;
-
+cout << S;
 
 
 

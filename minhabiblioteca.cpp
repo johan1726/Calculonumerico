@@ -1155,6 +1155,28 @@ void GradienteVet( Matriz &X, int indice, Matriz &OUT, double h)
 
 }
 
+double QuadraturaGuassiana (double a, double b)
+{
+
+    double x[3] = {0, 0.538469310105683, 0.906179845938664};
+    double w[3] = {0.568888888888889, 0.478628670499366, 0.236926885056189};
+    double u, S, v;
+
+    u = ((b - a)*x[0] + a + b)/2;
+
+    S = w[0]*funcaopadrao01(u);
+
+    for(int i; i < 2; i++)
+    {
+        u = ((b - a)*x[i] + a + b)/2;
+        v = (-(b - a)*x[i] + a + b)/2;
+        S = S + w[i]*(funcaopadrao01(u) + funcaopadrao01(v));
+    }
+    S = (b - a)*S/2;
+
+    return S;
+}
+
 
 
 // Transposição de Matriz
