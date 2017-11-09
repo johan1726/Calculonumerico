@@ -18,6 +18,10 @@ double funcaopadrao1(double x)
 {
     return ((x*x*x*x*x)-13);
 }
+double funcaopadrao01(double x)
+{
+    return (x*x)+ 3*x;
+}
 
 // função Rn em R1
 double funcaopadrao( Matriz &X )

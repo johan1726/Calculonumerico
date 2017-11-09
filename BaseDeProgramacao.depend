@@ -863,3 +863,75 @@
 1510159967 source:/home/johan/Área de Trabalho/Engenharia/Cálculo numérico/2017-11-08/minhasfuncoes.cpp
 	"minhasfuncoes.h"
 
+1510168141 source:/home/igor/calcnum-master/Calculonumerico/main.cpp
+	<iostream>
+	"matriz.h"
+	"minhabiblioteca.h"
+	"minhasfuncoes.h"
+
+1510166011 /home/igor/calcnum-master/Calculonumerico/matriz.h
+	<cassert>
+	<cstdlib>
+	<iostream>
+	<cmath>
+	<iomanip>
+	<stdio.h>
+	<string>
+
+1510166011 /home/igor/calcnum-master/Calculonumerico/minhabiblioteca.h
+	<cassert>
+	<cstdlib>
+	"matriz.h"
+
+1510166011 /home/igor/calcnum-master/Calculonumerico/minhasfuncoes.h
+	"matriz.h"
+
+1510166011 source:/home/igor/calcnum-master/Calculonumerico/matriz.cpp
+	"matriz.h"
+
+1510166011 source:/home/igor/calcnum-master/Calculonumerico/minhasfuncoes.cpp
+	"minhasfuncoes.h"
+
+1510168374 source:/home/igor/calcnum-master/Calculonumerico/minhabiblioteca.cpp
+	<iostream>
+	"minhabiblioteca.h"
+	"matriz.h"
+	"minhasfuncoes.h"
+	<math.h>
+
+1510252723 source:c:\playground\calculonumerico\main.cpp
+	<iostream>
+	"matriz.h"
+	"minhabiblioteca.h"
+	"minhasfuncoes.h"
+
+1510243937 c:\playground\calculonumerico\matriz.h
+	<cassert>
+	<cstdlib>
+	<iostream>
+	<cmath>
+	<iomanip>
+	<stdio.h>
+	<string>
+
+1510246899 c:\playground\calculonumerico\minhabiblioteca.h
+	<cassert>
+	<cstdlib>
+	"matriz.h"
+
+1510252502 c:\playground\calculonumerico\minhasfuncoes.h
+	"matriz.h"
+
+1510243937 source:c:\playground\calculonumerico\matriz.cpp
+	"matriz.h"
+
+1510252791 source:c:\playground\calculonumerico\minhabiblioteca.cpp
+	<iostream>
+	"minhabiblioteca.h"
+	"matriz.h"
+	"minhasfuncoes.h"
+	<math.h>
+
+1510252509 source:c:\playground\calculonumerico\minhasfuncoes.cpp
+	"minhasfuncoes.h"
+
