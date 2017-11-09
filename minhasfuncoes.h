@@ -12,6 +12,7 @@
 // funções padrão para execução do algoritmo
 double funcaopadrao( Matriz &);
 double funcaopadrao( double );
+double funcaopadrao01(double );
 void funcaopadrao3(Matriz &, Matriz &);
 void funcaopadrao4(Matriz &, Matriz &);
 

@@ -899,7 +899,7 @@
 	"minhasfuncoes.h"
 	<math.h>
 
-1510243937 source:c:\playground\calculonumerico\main.cpp
+1510252723 source:c:\playground\calculonumerico\main.cpp
 	<iostream>
 	"matriz.h"
 	"minhabiblioteca.h"
@@ -914,24 +914,24 @@
 	<stdio.h>
 	<string>
 
-1510243937 c:\playground\calculonumerico\minhabiblioteca.h
+1510246899 c:\playground\calculonumerico\minhabiblioteca.h
 	<cassert>
 	<cstdlib>
 	"matriz.h"
 
-1510243937 c:\playground\calculonumerico\minhasfuncoes.h
+1510252502 c:\playground\calculonumerico\minhasfuncoes.h
 	"matriz.h"
 
 1510243937 source:c:\playground\calculonumerico\matriz.cpp
 	"matriz.h"
 
-1510243937 source:c:\playground\calculonumerico\minhabiblioteca.cpp
+1510252791 source:c:\playground\calculonumerico\minhabiblioteca.cpp
 	<iostream>
 	"minhabiblioteca.h"
 	"matriz.h"
 	"minhasfuncoes.h"
 	<math.h>
 
-1510243937 source:c:\playground\calculonumerico\minhasfuncoes.cpp
+1510252509 source:c:\playground\calculonumerico\minhasfuncoes.cpp
 	"minhasfuncoes.h"
 
