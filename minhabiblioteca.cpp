@@ -1180,6 +1180,15 @@ double QuadraturaGuassiana (double a, double b)
 
 double QuadraturaGuassiana (double a, double b, int n)
 {
+    if (n <= 0){
+        cout << "Erro matriz QuadraturaGuassiana Abortando...";
+        abort();
+    }
+
+    if( n > 20) {
+        cout << "Erro matriz QuadraturaGuassiana Abortando...";
+        abort();
+    }
    const double w[20] = {
         0.1527533871307258,
         0.1527533871307258,
