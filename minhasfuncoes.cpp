@@ -11,7 +11,7 @@
 // R1 em R1
 double funcaopadrao(double x)
 {
-    return ((x*x) -2 );
+    return (1/(x*x*x));
 }
 
 double funcaopadrao1(double x)

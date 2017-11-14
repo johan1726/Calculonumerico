@@ -39,9 +39,10 @@ int main()
 //    cout << "\n\n" << setprecision(15) << h;
 
 double S;
-S = QuadraturaGuassiana(1, 2);
+S = QuadraturaGuassianav2(1, 10, 20);
 
 cout << S;
+
 
 
 
