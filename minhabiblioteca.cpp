@@ -1340,6 +1340,33 @@ double QuadraturaGuassiana (double a, double b, int n )
 
     return S;
 }
+void JacobianaMat(Matriz&Mat_Jacob, Matriz &OUT, Matriz &X0, int DBG_VIEW)
+{
+
+    int i,j,n;
+    n = OUT.dim('c');
+
+    if(Mat_Jacob.dim('c') != n | Mat_Jacob.dim('l') != n | X0.dim('l') != OUT.dim('l'))
+    {
+        cout << "Erro matriz JacobianaMat. Abortando...";
+        abort();
+    }
+
+    for(i=0;i<n; i++)//for para passar as linhas na matriz jacobiana e para calcular o vetor gradiente
+    {
+        GradienteVet(X0,i+1,OUT);
+        for(j=0;j<n;j++)//for para passar as colunas e para preencher as linhas e colunas da Matriz Jacobiana com o vetor gradiente
+        {
+            Mat_Jacob.entrada(i,j,OUT.saida(0,j));
+
+            if(DBG_VIEW == 1)//Mostra a matriz jacobiana "enxendo" com os valores do vetor gradiente
+            {
+                Mat_Jacob.imprime();
+                cout << "\n\n";
+            }
+            }
+        }
+    }
 
 // Transposição de Matriz
 

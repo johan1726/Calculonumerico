@@ -41,6 +41,8 @@ void GradienteVet( Matriz &, int , Matriz &, double h = 0.0001);
 double QuadraturaGuassiana (double , double );
 //double QuadraturaGuassiana (double , double , int );
 double QuadraturaGuassiana (double , double , int );
+void JacobianaMat(Matriz &,Matriz &, Matriz &, int = 0);
+
 
 // TUA DECLARAÇÃO DE PROTÓTIPOS AQUI......................
 

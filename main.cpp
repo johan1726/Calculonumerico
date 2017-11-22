@@ -43,6 +43,17 @@ S = QuadraturaGuassiana(1, 10, 20);
 
 cout << S;
 
+int pi;
+pi = 3,14159265358979323846;
+
+double VET_X0[4]={1,2,1,2*pi};
+
+Matriz X0(VET_X0,1,4),OUT(1,4),MAT_JACOB(4,4);
+
+JacobianaMat(MAT_JACOB,OUT,X0,1);
+
+MAT_JACOB.imprime();
+
 
 
 
