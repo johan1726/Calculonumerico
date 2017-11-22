@@ -39,8 +39,12 @@ double Newton1D (double , int ,double tol=0.000001,int DBG_VIEW = 0 );
 double Secante (double , double , int , double tol=0.000001, int DBG_VIEW = 0);
 void GradienteVet( Matriz &, int , Matriz &, double h = 0.0001);
 double QuadraturaGuassiana (double , double );
+//double QuadraturaGuassiana (double , double , int );
 double QuadraturaGuassiana (double , double , int );
-double QuadraturaGuassianav2 (double , double , int );
+void JacobianaMat(Matriz &,Matriz &, Matriz &, int = 0);
+void TRANSPOSTA(Matriz &, Matriz&);
+void MinimosQuad (Matriz &, Matriz &, int, Matriz &, double&);
+
 
 // TUA DECLARAÇÃO DE PROTÓTIPOS AQUI......................
 

@@ -1178,85 +1178,85 @@ double QuadraturaGuassiana (double a, double b)
     return S;
 }
 
-double QuadraturaGuassiana (double a, double b, int n)
-{
-    if (n <= 0)
-    {
-        cout << "Erro matriz QuadraturaGuassiana Abortando...";
-        abort();
-    }
-
-    if( n > 20)
-    {
-        cout << "Erro matriz QuadraturaGuassiana Abortando...";
-        abort();
-    }
-   const double w[20] = {
-        0.1527533871307258,
-        0.1527533871307258,
-        0.1491729864726037,
-        0.1491729864726037,
-        0.1420961093183820,
-        0.1420961093183820,
-        0.1316886384491766,
-        0.1316886384491766,
-        0.1181945319615184,
-        0.1181945319615184,
-        0.1019301198172404,
-        0.1019301198172404,
-        0.0832767415767048,
-        0.0832767415767048,
-        0.0626720483341091,
-        0.0626720483341091,
-        0.0406014298003869,
-        0.0406014298003869,
-        0.0176140071391521,
-        0.0176140071391521
-    };
-    vector<double> wv (w, w + sizeof(w) / sizeof(w[0]) );
-
-   const double x[20] = {
-        -0.0765265211334973,
-        0.0765265211334973,
-        -0.2277858511416451,
-        0.2277858511416451,
-        -0.3737060887154195,
-        0.3737060887154195,
-        -0.5108670019508271,
-        0.5108670019508271,
-        -0.6360536807265150,
-        0.6360536807265150,
-        -0.7463319064601508,
-        0.7463319064601508,
-        -0.8391169718222188,
-        0.8391169718222188,
-        -0.9122344282513259,
-        0.9122344282513259,
-        -0.9639719272779138,
-        0.9639719272779138,
-        -0.9931285991850949,
-        0.9931285991850949
-    };
-    vector<double> xv (x, x + sizeof(x) / sizeof(x[0]) );
-
-    xv.resize(n);
-    wv.resize(n);
-
-    double S, lambdaX, ba2;
-    S = 0;
-    ba2 = (b - a)/2;
-
-    for( int i =0; i < n; i++ )
-    {
-        lambdaX = ba2*xv[i] + (a*1-b*(-1))/2;
-        S = S + wv[i]*funcaopadrao(lambdaX);
-    }
-
-    S = S*ba2;
-
-    return S;
-}
-double QuadraturaGuassianav2 (double a, double b, int n )
+//double QuadraturaGuassiana (double a, double b, int n)
+//{
+//    if (n <= 0)
+//    {
+//        cout << "Erro matriz QuadraturaGuassiana Abortando...";
+//        abort();
+//    }
+//
+//    if( n > 20)
+//    {
+//        cout << "Erro matriz QuadraturaGuassiana Abortando...";
+//        abort();
+//    }
+//   const double w[20] = {
+//        0.1527533871307258,
+//        0.1527533871307258,
+//        0.1491729864726037,
+//        0.1491729864726037,
+//        0.1420961093183820,
+//        0.1420961093183820,
+//        0.1316886384491766,
+//        0.1316886384491766,
+//        0.1181945319615184,
+//        0.1181945319615184,
+//        0.1019301198172404,
+//        0.1019301198172404,
+//        0.0832767415767048,
+//        0.0832767415767048,
+//        0.0626720483341091,
+//        0.0626720483341091,
+//        0.0406014298003869,
+//        0.0406014298003869,
+//        0.0176140071391521,
+//        0.0176140071391521
+//    };
+//    vector<double> wv (w, w + sizeof(w) / sizeof(w[0]) );
+//
+//   const double x[20] = {
+//        -0.0765265211334973,
+//        0.0765265211334973,
+//        -0.2277858511416451,
+//        0.2277858511416451,
+//        -0.3737060887154195,
+//        0.3737060887154195,
+//        -0.5108670019508271,
+//        0.5108670019508271,
+//        -0.6360536807265150,
+//        0.6360536807265150,
+//        -0.7463319064601508,
+//        0.7463319064601508,
+//        -0.8391169718222188,
+//        0.8391169718222188,
+//        -0.9122344282513259,
+//        0.9122344282513259,
+//        -0.9639719272779138,
+//        0.9639719272779138,
+//        -0.9931285991850949,
+//        0.9931285991850949
+//    };
+//    vector<double> xv (x, x + sizeof(x) / sizeof(x[0]) );
+//
+//    xv.resize(n);
+//    wv.resize(n);
+//
+//    double S, lambdaX, ba2;
+//    S = 0;
+//    ba2 = (b - a)/2;
+//
+//    for( int i =0; i < n; i++ )
+//    {
+//        lambdaX = ba2*xv[i] + (a*1-b*(-1))/2;
+//        S = S + wv[i]*funcaopadrao(lambdaX);
+//    }
+//
+//    S = S*ba2;
+//
+//    return S;
+//}
+double QuadraturaGuassiana (double a, double b, int n )
 {
     if (n <= 0)
     {
@@ -1339,6 +1339,107 @@ double QuadraturaGuassianav2 (double a, double b, int n )
     S = S*ba2;
 
     return S;
+}
+void JacobianaMat(Matriz&Mat_Jacob, Matriz &OUT, Matriz &X0, int DBG_VIEW)
+{
+
+    int i,j,n;
+    n = OUT.dim('c');
+
+    if(Mat_Jacob.dim('c') != n | Mat_Jacob.dim('l') != n | X0.dim('l') != OUT.dim('l'))
+    {
+        cout << "Erro matriz JacobianaMat. Abortando...";
+        abort();
+    }
+
+    for(i=0;i<n; i++)//for para passar as linhas na matriz jacobiana e para calcular o vetor gradiente
+    {
+        GradienteVet(X0,i+1,OUT);
+        for(j=0;j<n;j++)//for para passar as colunas e para preencher as linhas e colunas da Matriz Jacobiana com o vetor gradiente
+        {
+            Mat_Jacob.entrada(i,j,OUT.saida(0,j));
+
+            if(DBG_VIEW == 1)//Mostra a matriz jacobiana "enxendo" com os valores do vetor gradiente
+            {
+                Mat_Jacob.imprime();
+                cout << "\n\n";
+            }
+            }
+        }
+    }
+
+void TRANSPOSTA (Matriz &A, Matriz &B)
+{
+    if(A.dim('l')!= B.dim('c') || A.dim('c')!= B.dim('l'))
+    {
+        cout << "Erro de dimensão de matriz. Algoritmo TRANSPOSTA. Abortando...";
+        abort();
+    }
+    int i,j;
+    int n = A.dim('l');
+    int m = A.dim('c');
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            B.entrada(j,i,A.saida(i,j));
+        }
+    }
+}
+
+void MinimosQuad (Matriz &T, Matriz &Y, int n, Matriz &X, double &r2)
+{
+    int i, j, p = T.dim('c');
+
+   Matriz A(p,n+1), At (n+1,p), AtA(n+1,n+1), AtY (n+1,1);
+
+    for(i=0;i<p;i++)
+    {
+        A.entrada(i,0,1);
+    }
+
+    for(i=0;i<p;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            A.entrada(i,j,pow(T.saida(0,i),j));
+        }
+    }
+    TRANSPOSTA(A,At);
+    MULTIPLICA(At,A,AtA);
+    MULTIPLICA(At,Y,AtY);
+    Matriz AtYt (1,X.dim('c'));
+    TRANSPOSTA(AtY,AtYt);
+    Matriz AtA2(AtA.dim('l'),AtA.dim('c'));
+
+    EliminGaussPivotPARC(AtA,AtYt, AtA2, X);
+    TriangSup(AtA2,X,X);
+
+    //r2
+    double Somat1=0, Somat2=0, Somat3=0;
+
+    if(n=1)
+    {
+        for (i=0;i<p;i++)
+        {
+            Somat1 = Somat1 + pow(Y.saida(i,0)-X.saida(0,0)-X.saida(0,1)*T.saida(0,i),2);
+            Somat2 = Somat2 + Y.saida(i,0)*Y.saida(i,0);
+            Somat3 = Somat3 + Y.saida(i,0);
+        }
+
+        double KidBengala=(Somat1)/(Somat2-(1/p)*Somat3*Somat3);
+    r2=1-KidBengala;
+    cout << r2;
+//cout << "\n";
+//cout << Somat2;
+//cout << "\n";
+//cout << Somat3;
+
+    }
+
+
+
 }
 
 // Transposição de Matriz
