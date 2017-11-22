@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1510697892 source:c:\playground\calculonumerico\main.cpp
+1511383959 source:c:\playground\calculonumerico\main.cpp
 	<iostream>
 	"matriz.h"
 	"minhabiblioteca.h"
@@ -14,7 +14,7 @@
 	<stdio.h>
 	<string>
 
-1510697887 c:\playground\calculonumerico\minhabiblioteca.h
+1511383617 c:\playground\calculonumerico\minhabiblioteca.h
 	<cassert>
 	<cstdlib>
 	"matriz.h"
@@ -25,7 +25,7 @@
 1510243937 source:c:\playground\calculonumerico\matriz.cpp
 	"matriz.h"
 
-1510697874 source:c:\playground\calculonumerico\minhabiblioteca.cpp
+1511384061 source:c:\playground\calculonumerico\minhabiblioteca.cpp
 	<iostream>
 	"minhabiblioteca.h"
 	"matriz.h"

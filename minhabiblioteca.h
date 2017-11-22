@@ -42,6 +42,8 @@ double QuadraturaGuassiana (double , double );
 //double QuadraturaGuassiana (double , double , int );
 double QuadraturaGuassiana (double , double , int );
 void JacobianaMat(Matriz &,Matriz &, Matriz &, int = 0);
+void TRANSPOSTA(Matriz &, Matriz&);
+void MinimosQuad (Matriz &, Matriz &, int, Matriz &, double&);
 
 
 // TUA DECLARAÇÃO DE PROTÓTIPOS AQUI......................

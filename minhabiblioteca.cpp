@@ -1368,6 +1368,80 @@ void JacobianaMat(Matriz&Mat_Jacob, Matriz &OUT, Matriz &X0, int DBG_VIEW)
         }
     }
 
+void TRANSPOSTA (Matriz &A, Matriz &B)
+{
+    if(A.dim('l')!= B.dim('c') || A.dim('c')!= B.dim('l'))
+    {
+        cout << "Erro de dimensão de matriz. Algoritmo TRANSPOSTA. Abortando...";
+        abort();
+    }
+    int i,j;
+    int n = A.dim('l');
+    int m = A.dim('c');
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            B.entrada(j,i,A.saida(i,j));
+        }
+    }
+}
+
+void MinimosQuad (Matriz &T, Matriz &Y, int n, Matriz &X, double &r2)
+{
+    int i, j, p = T.dim('c');
+
+   Matriz A(p,n+1), At (n+1,p), AtA(n+1,n+1), AtY (n+1,1);
+
+    for(i=0;i<p;i++)
+    {
+        A.entrada(i,0,1);
+    }
+
+    for(i=0;i<p;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            A.entrada(i,j,pow(T.saida(0,i),j));
+        }
+    }
+    TRANSPOSTA(A,At);
+    MULTIPLICA(At,A,AtA);
+    MULTIPLICA(At,Y,AtY);
+    Matriz AtYt (1,X.dim('c'));
+    TRANSPOSTA(AtY,AtYt);
+    Matriz AtA2(AtA.dim('l'),AtA.dim('c'));
+
+    EliminGaussPivotPARC(AtA,AtYt, AtA2, X);
+    TriangSup(AtA2,X,X);
+
+    //r2
+    double Somat1=0, Somat2=0, Somat3=0;
+
+    if(n=1)
+    {
+        for (i=0;i<p;i++)
+        {
+            Somat1 = Somat1 + pow(Y.saida(i,0)-X.saida(0,0)-X.saida(0,1)*T.saida(0,i),2);
+            Somat2 = Somat2 + Y.saida(i,0)*Y.saida(i,0);
+            Somat3 = Somat3 + Y.saida(i,0);
+        }
+
+        double KidBengala=(Somat1)/(Somat2-(1/p)*Somat3*Somat3);
+    r2=1-KidBengala;
+    cout << r2;
+//cout << "\n";
+//cout << Somat2;
+//cout << "\n";
+//cout << Somat3;
+
+    }
+
+
+
+}
+
 // Transposição de Matriz
 
 
